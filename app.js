@@ -7,6 +7,11 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 
+// Root route handler
+app.get('/', (req, res) => {
+  res.send('Delivery Cost API is running. Send POST requests to /api/calculate-delivery-cost');
+});
+
 // Routes
 app.use('/api', deliveryRouter);
 
